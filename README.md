@@ -1,3 +1,28 @@
+# JPassword Extension
+
+An example client that interacts with my [password manager.](https://github.com/amanojeremie/jpassword) written
+using React and acts as a Firefox Extension.
+
+## Running
+
+After using `yarn build`, in a Firefox browser instance go to `about:addons`.
+
+1. Click the gearbox on the top right
+2. Click `Debug Add-ons`
+3. Click `Load Temporary Add-on`
+4. Navigate to where jpassword-extension is located, and select `./build/manifest.json`
+
+## Connecting
+
+If connecting to a local instance of jpassword
+
+1. Click on the extension icon
+2. Type `http://localhost:8088/`
+3. Click `Connect`
+4. Create a User.
+
+# Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
