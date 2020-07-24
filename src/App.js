@@ -21,6 +21,13 @@ class App extends React.Component {
         }
     }
 
+    /**
+     * Stores the login of the user of browser storage
+     * @param {*} endpoint The API endpoint of JPassword
+     * @param {*} username The user's username
+     * @param {*} password The user's password
+     * @param {*} credentials The credentials returned by JPassword
+     */
     login = (endpoint, username, password, credentials) => {
         browser.storage.local.set({user: {
             endpoint: endpoint,
@@ -39,6 +46,9 @@ class App extends React.Component {
         });
     }
 
+    /**
+     * Clears the browser storage of the logged in user
+     */
     logout = () => {
         browser.storage.local.remove('user').then(() => {
             this.setState({

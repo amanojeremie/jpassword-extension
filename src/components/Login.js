@@ -3,6 +3,9 @@ import TextBox from './form/TextBox';
 import endpoints from '../endpoints';
 import fetch_json from '../js/fetch_json';
 
+/**
+ * Component for logging in or creating a new user
+ */
 class Login extends React.Component {
 
     constructor(props) {
@@ -10,6 +13,7 @@ class Login extends React.Component {
 
         this.state = {
             endpoint: '',
+            // The API endpoint set by the user to point to their JPassword instance
             setEndpoint: '',
             username: '',
             setUsername: '',
@@ -25,6 +29,9 @@ class Login extends React.Component {
 		})
     }
     
+    /**
+     * Test the endpoint to check whether it is an endpoint for JPassword
+     */
     handleEndpointSubmit = (event) => {
         fetch(this.state.endpoint)
             .then((response) => {
@@ -45,6 +52,9 @@ class Login extends React.Component {
             });
     }
     
+    /**
+     * Create a new User, "Sign-Up"
+     */
     handleCreate = (event) => {
         console.log(this.state.setEndpoint + endpoints.CREATE);
         fetch_json(this.state.setEndpoint + endpoints.CREATE, {
@@ -64,6 +74,9 @@ class Login extends React.Component {
         });
     }
 
+    /**
+     * Attempt to login using the credentials provided
+     */
     handleLogin = (event) => {
         fetch_json(this.state.setEndpoint + endpoints.LOGIN, {
             username: this.state.username,

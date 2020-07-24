@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * A React component for a text input
+ */
 class TextBox extends React.Component {
 	render() {
 		return (

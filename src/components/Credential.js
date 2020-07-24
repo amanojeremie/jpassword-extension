@@ -2,21 +2,31 @@ import React from 'react';
 import CredentialView from './CredentialView';
 import browser from 'webextension-polyfill';
 
+/**
+ * Single Credential view
+ */
 export default class Credential extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            // Expanded view
             expanded: false
         };
     }
 
+    /** 
+     * Toggles the view
+    */
     toggleExpand = () => {
         this.setState({
             expanded: !this.state.expanded
         })
     }
 
+    /**
+     * Fills the crendtial on the current tab
+     */
     onFill = () => {
         browser.tabs.query({active: true}).then((tabs) => {
             browser.tabs.sendMessage(tabs[0].id, {

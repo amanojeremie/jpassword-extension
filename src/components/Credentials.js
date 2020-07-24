@@ -2,6 +2,9 @@ import React from 'react';
 import Credential from './Credential';
 import CredentialView from './CredentialView';
 
+/**
+ * A basic component displaying a list of Credentials
+ */
 export default class Credentials extends React.Component {
 
     constructor(props) {

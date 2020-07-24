@@ -3,6 +3,9 @@ import TextBox from './form/TextBox';
 import endpoints from '../endpoints';
 import fetch_json from '../js/fetch_json';
 
+/**
+ * Expanded view of the Credential, allowing updating/deletion
+ */
 export default class CredentialView extends React.Component {
     constructor(props) {
         super(props);
@@ -50,6 +53,9 @@ export default class CredentialView extends React.Component {
         }
     }
 
+    /**
+     * Call the API endpoint and delete the Credential
+     */
     handleDelete = () => {
         fetch_json(this.props.user.endpoint + endpoints.CREDENTIAL + '/' + this.props.index, this.props.user
             , 'DELETE').then((json) => {
